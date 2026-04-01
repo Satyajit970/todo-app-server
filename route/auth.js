@@ -15,4 +15,4 @@ router.get('/hello', function(req, res, next) {
   res.send('hello for auth route');
 });
 
-module.exports = router
+module.exports = router;
