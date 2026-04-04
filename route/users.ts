@@ -1,14 +1,13 @@
-var express = require('express');
-var router = express.Router();
+import { Router, Request, Response } from "express";
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('user route');
+const router = Router();
+
+router.get("/", (req: Request, res: Response) => {
+  res.send("users route working");
 });
 
-/* GET users listing. */
-router.get('/hello', function(req, res, next) {
-  res.send('hello from user route');
+router.get("/hello", (req: Request, res: Response) => {
+  res.send("hello from users route");
 });
 
-module.exports = router;
+export default router;

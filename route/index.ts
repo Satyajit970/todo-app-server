@@ -1,21 +1,20 @@
-var express = require('express');
-var router = express.Router();
+import { Router, Request, Response } from "express";
+import usersRouter from "./users";
+import authRouter from "./auth";
 
+const router = Router();
 
-var usersRouter = require('./users');
-var authRouter = require('./auth');
+// routes
+router.use("/users", usersRouter);
+router.use("/auth", authRouter);
 
-
-
-router.use('/users', usersRouter);
-router.use('/auth', authRouter);
-
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.send('index route');
+// test routes
+router.get("/", (req: Request, res: Response) => {
+  res.send("index route");
 });
-/* GET home page. */
-router.get('/hello', function(req, res) {
-  res.send('hello from index route');
+
+router.get("/hello", (req: Request, res: Response) => {
+  res.send("hello from index route");
 });
-module.exports = router;
+
+export default router;

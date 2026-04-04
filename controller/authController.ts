@@ -1,17 +1,17 @@
 
-async function Login(req, res) {
-    console.log('Inside login controller');
-    console.log('Got the request body for the api call', req.body);
-    console.log('Got the request header for the api call', req.headers['content-type']);
+import { Request, Response } from "express";
 
-    res.send(req.body);
-}
+export const Login = async (req: Request, res: Response) => {
+  console.log("Inside login controller");
+  console.log("Request body:", req.body);
+  console.log("Content-Type:", req.headers["content-type"]);
 
-async function Register(req, res) {
-    console.log('Inside Register controller');
-    console.log('Got the request body for the api call', req.body);
-    var user;
-    res.send(req.body);
-}
+  res.send(req.body);
+};
 
-module.exports = { Login, Register };
+export const Register = async (req: Request, res: Response) => {
+  console.log("Inside Register controller");
+  console.log("Request body:", req.body);
+
+  res.send(req.body);
+};
